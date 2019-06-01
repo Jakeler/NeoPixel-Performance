@@ -28,7 +28,6 @@ void loop() {
 
 
     digitalWrite(TRIG_PIN, 1);
-    FastLED.clearData();
     for (size_t i = 0; i < 100; i++)
     {
         FastLED.showColor(CRGB::Green);
@@ -39,7 +38,6 @@ void loop() {
 
 
     digitalWrite(TRIG_PIN, 1);
-    FastLED.clearData();
     for (size_t i = 0; i < 100; i++)
     {
         fill_rainbow(leds, LED_COUNT, 0, 5);
