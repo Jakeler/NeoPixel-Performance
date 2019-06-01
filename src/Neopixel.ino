@@ -5,6 +5,7 @@
 Adafruit_NeoPixel strip(LED_COUNT, LED_PIN, NEO_GRB + NEO_KHZ800);
 
 void setup() {
+    Serial.begin(9600);
     pinMode(TRIG_PIN, OUTPUT);
 
     strip.begin();
@@ -59,5 +60,7 @@ void loop() {
     digitalWrite(TRIG_PIN, 0);
     delay(5000);
 
+    // Print RAM usage
+    Serial.println(ESP.getFreeHeap());
 }
 

@@ -6,6 +6,7 @@
 CRGB leds[LED_COUNT];
 
 void setup() {
+    Serial.begin(9600);
     pinMode(TRIG_PIN, OUTPUT);
 
     FastLED.addLeds<NEOPIXEL, LED_PIN>(leds, LED_COUNT);
@@ -46,4 +47,7 @@ void loop() {
     }
     digitalWrite(TRIG_PIN, 0);
     delay(5000);
+
+    // Print RAM usage
+    Serial.println(ESP.getFreeHeap());
 }

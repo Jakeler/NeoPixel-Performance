@@ -5,6 +5,7 @@
 NeoPixelBrightnessBus<NeoGrbFeature, NeoEsp32I2s1800KbpsMethod> strip(LED_COUNT, LED_PIN);
 
 void setup() {
+    Serial.begin(9600);
     pinMode(TRIG_PIN, OUTPUT);
 
     strip.Begin();
@@ -57,4 +58,6 @@ void loop() {
     digitalWrite(TRIG_PIN, 0);
     delay(5000);
 
+    // Print RAM usage
+    Serial.println(ESP.getFreeHeap());
 }
